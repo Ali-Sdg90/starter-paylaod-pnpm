@@ -23,11 +23,12 @@ jobs:
       - name: Deploy
         env:
           LIARA_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
-        run: |
-          if [ ${{ github.ref }} == 'refs/heads/main' ]; then
-            liara deploy -f ./Dockerfile --platform=docker --app="dev-test" --api-token="$LIARA_TOKEN" --no-app-logs
+        run: liara deploy -f ./Dockerfile --platform=docker --api-token="$LIARA_TOKEN" --no-app-logs
+          # |
+          # if [ ${{ github.ref }} == 'refs/heads/main' ]; then
+          #   liara deploy -f ./Dockerfile --platform=docker --app="pixle-dev" --api-token="$LIARA_TOKEN" --no-app-logs
           # elif [ ${{ github.ref }} == 'refs/heads/test' ]; then
           #   liara deploy -f ./Dockerfile --app="my-test-app" --api-token="$LIARA_TOKEN" --no-app-logs
           # elif [ ${{ github.ref }} == 'refs/heads/staging' ]; then
           #   liara deploy -f ./Dockerfile --app="my-staging-app" --api-token="$LIARA_TOKEN" --no-app-logs
-          fi
+          # fi
