@@ -3,7 +3,7 @@ import path from 'path'
 
 // Run this script to eject the front-end from this template
 // This will remove all template-specific files and directories
-// See `yarn eject` in `package.json` for the exact command
+// See `pnpm eject` in `package.json` for the exact command
 // See `./README.md#eject` for more information
 
 const files = ['./next.config.js', './next-env.d.ts', './redirects.js']

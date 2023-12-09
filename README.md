@@ -49,7 +49,7 @@ If you have not done so already, you need to have standalone copy of this repo o
 
 1. First [clone the repo](#clone) if you have not done so already
 1. `cd my-project && cp .env.example .env` to copy the example environment variables
-1. `yarn && yarn dev` to install dependencies and start the dev server
+1. `pnpm i && pnpm dev` to install dependencies and start the dev server
 1. `open http://localhost:3000` to open the app in your browser
 
 That's it! Changes made in `./src` will be reflected in your app. Follow the on-screen instructions to login and create your first admin user. Then check out [Production](#production) once you're ready to build and serve your app, and [Deployment](#deployment) when you're ready to go live.
@@ -203,7 +203,7 @@ Although Next.js includes a robust set of caching strategies out of the box, Pay
 
 ### Eject
 
-If you prefer another front-end framework or would like to use Payload as a standalone CMS, you can easily eject the front-end from this template. To eject, simply run `yarn eject`. This will uninstall all Next.js related dependencies and delete all files and folders related to the Next.js front-end. It also removes all custom routing from your `server.ts` file and updates your `eslintrc.js`.
+If you prefer another front-end framework or would like to use Payload as a standalone CMS, you can easily eject the front-end from this template. To eject, simply run `pnpm eject`. This will uninstall all Next.js related dependencies and delete all files and folders related to the Next.js front-end. It also removes all custom routing from your `server.ts` file and updates your `eslintrc.js`.
 
 > Note: Your eject script may not work as expected if you've made significant modifications to your project. If you run into any issues, compare your project's dependencies and file structure with this template. See [./src/eject](./src/eject) for full details.
 
@@ -225,7 +225,7 @@ That's it! The Docker instance will help you get up and running quickly while al
 
 ### Seed
 
-To seed the database with a few pages, posts, and projects you can run `yarn seed`. This template also comes with a `GET /api/seed` endpoint you can use to seed the database from the admin panel.
+To seed the database with a few pages, posts, and projects you can run `pnpm seed`. This template also comes with a `GET /api/seed` endpoint you can use to seed the database from the admin panel.
 
 The seed script will also create two users for demonstration purposes only:
 1. Demo Author
@@ -243,8 +243,8 @@ The seed script will also create two users for demonstration purposes only:
 
 To run Payload in production, you need to build and serve the Admin panel. To do so, follow these steps:
 
-1. Invoke the `payload build` script by running `yarn build` or `npm run build` in your project root. This creates a `./build` directory with a production-ready admin bundle.
-1. Finally run `yarn serve` or `npm run serve` to run Node in production and serve Payload from the `./build` directory.
+1. Invoke the `payload build` script by running `pnpm build` or `npm run build` in your project root. This creates a `./build` directory with a production-ready admin bundle.
+1. Finally run `pnpm serve` or `npm run serve` to run Node in production and serve Payload from the `./build` directory.
 1. When you're ready to go live, see [Deployment](#deployment) for more details.
 
 ### Deployment

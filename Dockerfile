@@ -1,4 +1,8 @@
-FROM node:18.8-alpine as base
+FROM node:20.10.0-slim as base
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 
 FROM base as builder
 
@@ -6,8 +10,9 @@ WORKDIR /home/node/app
 COPY package*.json ./
 
 COPY . .
-RUN yarn install
-RUN yarn build
+RUN pnpm install --prod --frozen-lockfile
+# RUN pnpm install
+RUN pnpm build
 
 FROM base as runtime
 
@@ -16,9 +21,9 @@ ENV PAYLOAD_CONFIG_PATH=dist/payload.config.js
 
 WORKDIR /home/node/app
 COPY package*.json  ./
-COPY yarn.lock ./
+COPY pnpm-lock.yaml ./
 
-RUN yarn install --production
+RUN pnpm install --prod --frozen-lockfile
 COPY --from=builder /home/node/app/dist ./dist
 COPY --from=builder /home/node/app/build ./build
 

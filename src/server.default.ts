@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 import path from 'path'
 
-// This file is used to replace `server.ts` when ejecting i.e. `yarn eject`
+// This file is used to replace `server.ts` when ejecting i.e. `pnpm eject`
 // See `../eject.ts` for exact details on how this file is used
 // See `./README.md#eject` for more information
 

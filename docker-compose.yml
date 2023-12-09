@@ -2,21 +2,21 @@ version: '3'
 
 services:
   payload:
-    image: node:18-alpine
+    image: node:20-alpine
     ports:
       - '3000:3000'
     volumes:
       - .:/home/node/app
       - node_modules:/home/node/app/node_modules
     working_dir: /home/node/app/
-    command: sh -c "yarn install && yarn dev"
+    command: sh -c "pnpm install && pnpm dev"
     depends_on:
-      - mongo
+      - postgres
     env_file:
       - .env
 
   mongo:
-    image: mongo:latest
+    image: postgres:latest
     ports:
       - '27017:27017'
     command:
