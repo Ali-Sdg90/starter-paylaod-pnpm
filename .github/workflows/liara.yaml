@@ -25,7 +25,7 @@ jobs:
           LIARA_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
         run: |
           if [ ${{ github.ref }} == 'refs/heads/main' ]; then
-            liara deploy -f ./Dockerfile --app="dev-test" --api-token="$LIARA_TOKEN" --no-app-logs
+            liara deploy -f ./Dockerfile --platform=docker --app="dev-test" --api-token="$LIARA_TOKEN" --no-app-logs
           # elif [ ${{ github.ref }} == 'refs/heads/test' ]; then
           #   liara deploy -f ./Dockerfile --app="my-test-app" --api-token="$LIARA_TOKEN" --no-app-logs
           # elif [ ${{ github.ref }} == 'refs/heads/staging' ]; then

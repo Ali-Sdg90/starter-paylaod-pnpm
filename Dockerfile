@@ -10,7 +10,7 @@ WORKDIR /home/node/app
 COPY package*.json ./
 
 COPY . .
-RUN pnpm install --prod --frozen-lockfile
+RUN pnpm install --frozen-lockfile
 # RUN pnpm install
 RUN pnpm build
 
